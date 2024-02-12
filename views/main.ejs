@@ -1,0 +1,98 @@
+<!-- views/register.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Main Page</title>
+      <!-- Include Bootstrap CSS -->
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+      <style>
+        body {
+          padding-top: 56px;
+          /* Padding for fixed navbar */
+        }
+      
+        .footer {
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          background-color: #f5f5f5;
+          text-align: center;
+          padding: 10px 0;
+        }
+      
+        .nav-item:hover,
+        .nav-item:active {
+          color: white;
+        }
+      </style>
+  </head>
+  <body>
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top d-flex justify-content-between align-items-center ">
+        <div class="navBar container d-flex justify-content-between align-items-center" id="navBaring">
+          <div><a class="navbar-brand" href="#">Site Name</a></div>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav" id="navbar-nav">
+              <li class="nav-item">
+                <form method="GET" action="/weather">
+                  <button type="submit">Weather</button>
+                </form>
+              </li>
+
+              <li>
+                    <form method="GET" action="/currency">
+                      <button type="submit">Currency</button>
+                    </form>
+              </li>
+              <li class="nav-item">
+                    <form method="GET" action="/mockapi">
+                      <button type="submit">MockApi</button>
+                    </form>
+              </li>
+            </ul>
+            
+            <form class="form-inline my-2 my-lg-0">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" formaction="/">Log Out</button>
+            </form>
+
+          </div>
+        </div>
+      </nav>
+
+    <div class="container mt-4">
+      <div class="jumbotron">
+        <h1 class="display-4">Welcome, <%=user?.username%></h1>
+        <p class="lead">This site is designed to provide you with easy access to:</p>
+        <hr class="my-4">
+        <ul>
+          <li>Get weather forecast data</li>
+          <li>Exchange rate information</li>
+          <li>Ready-made API data</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container">
+        <span class="text-muted">Created by Diyar Amangeldi</span> <br>
+        <span class="text-muted">Group SE-2202</span>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.7.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
